@@ -19,6 +19,7 @@ function calc(){
             areaConvertido.value += bin[i]
         }
     }
+
     else if(base == 'Binário' && baseConverter == 'Decimal'){
         let bin = areaConverter.value
         var vetorBinario = bin.split("")
@@ -36,5 +37,51 @@ function calc(){
             }
         }
         areaConvertido.value = decimal
+    }
+
+    else if(base == 'Decimal' && baseConverter == 'Octal'){
+        let bin = []
+        decimal = areaConverter.value
+
+        while(decimal > 0){
+            bin.unshift(decimal%8)
+            decimal = parseInt(decimal / 8)
+        }
+        
+
+        for(i=0; i < bin.length; i++){
+            areaConvertido.value += bin[i]
+        }
+    }
+
+    else if(base == 'Octal' && baseConverter == 'Binário'){
+        octal = areaConverter.value
+        let vetorBin = octal.split("")
+        var bin = "";
+
+        for(i=0; i < vetorBin.length; i++){
+            let num = vetorBin[i]
+            while(num > 0){
+                if((num - 4) >= 0){
+                    num = num - 4
+                    bin += "1"
+                }else{
+                    bin += "0"
+                }
+                if((num - 2) >= 0){
+                    num = num - 2
+                    bin += "1"
+                }else{
+                    bin += "0"
+                }
+                if((num - 1) >= 0){
+                    num = num - 1
+                    bin += "1"
+                }else{
+                    bin += "0"
+                }
+            }
+        }
+        areaConvertido.value = bin
     }
 }
