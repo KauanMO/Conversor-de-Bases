@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de números</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="titulo">
+            <span id="spTitulo">Conversor de números</span>
+        </div>
+        <div class="selecBase">
+            <select id="selectBaseAtual">
+                <option id="opBase" selected>Base</option>
+                <option id="opDecimal">Decimal</option>
+                <option id="opBinaria">Binário</option>
+            </select>
+
+            <span>para</span>
+
+            <select id="selectBaseConverter">
+                <option id="opBase" selected>Base</option>
+                <option id="opBinaria">Decimal</option>
+                <option id="opBinaria">Binário</option>
+            </select>
+        </div>
+        <div class="divBtt">
+            <button onclick="calc()" id="btConverter">
+                Converter
+            </button>
+        </div>
+        <div class="textArea">
+            <textarea id="txtareaConverter" cols="50" rows="10"></textarea>
+            <div class="igual"> <span id="spIgual"> = </span></div>
+            <textarea disabled id="txtareaConvertido" cols="50" rows="10"></textarea>
+        </div>
+    </div>
+</body>
+
+</html>
