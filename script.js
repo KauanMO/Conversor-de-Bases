@@ -59,30 +59,34 @@ function calc() {
         let vetorBin = octal.split("")
         var bin = "";
 
-        for (i = 0; i < vetorBin.length; i++) {
-            let num = vetorBin[i]
-            while (num > 0) {
-                if ((num - 4) >= 0) {
-                    num = num - 4
-                    bin += "1"
-                } else {
-                    bin += "0"
+        if(vetorBin.includes('8') || vetorBin.includes('9')){
+            areaConvertido.value = `Um número octal não contém os digitos 8 ou 9`
+        }else{
+            for (i = 0; i < vetorBin.length; i++) {
+                let num = vetorBin[i]
+                    while (num > 0) {
+                        if ((num - 4) >= 0) {
+                            num = num - 4
+                            bin += "1"
+                        } else {
+                            bin += "0"
+                        }
+                        if ((num - 2) >= 0) {
+                            num = num - 2
+                            bin += "1"
+                        } else {
+                            bin += "0"
+                        }
+                        if ((num - 1) >= 0) {
+                            num = num - 1
+                            bin += "1"
+                        } else {
+                            bin += "0"
+                        }
+                    }
+                    areaConvertido.value = bin
                 }
-                if ((num - 2) >= 0) {
-                    num = num - 2
-                    bin += "1"
-                } else {
-                    bin += "0"
-                }
-                if ((num - 1) >= 0) {
-                    num = num - 1
-                    bin += "1"
-                } else {
-                    bin += "0"
-                }
-            }
         }
-        areaConvertido.value = bin
     }
     else if (base == 'Octal' && baseConverter == 'Decimal') {
         octal = areaConverter.value
